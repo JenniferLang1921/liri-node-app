@@ -1,6 +1,7 @@
 # liri-node-app
 
 This app takes API's from Spotify, Twitter, and OMDB movies, and runs them on node.js when a command is given.
+
 ----------------------------
 
 You will need to include your own .env file to get this code to work with node.js on your computer.  
