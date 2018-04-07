@@ -113,17 +113,29 @@ if (command === "movie-this") {
 
 //Do What It Says (grab text from random.txt and use it to run spotify-this-song command)  doesn't work yet
 
-// This block of code will read from the random.txt file
-fs.readFile("random.txt", "utf8", function (error, data) {
 
-  // If the code experiences any errors it will log the error to the console.
-  if (error) {
-    return console.log(error);
+if(command==="do-what-it-says") {
+  // This block of code will read from the random.txt file
+  fs.readFile("random.txt", "utf8", function(error, data) {
+  
+    // If the code experiences any errors it will log the error to the console.
+    if (error) {
+      return console.log(error);
+    }
+  
+    // We will then print the contents of data
+    console.log(data);
+  
+    //store data in variable songmovie
+    var randomData = data.split(",");
+    console.log(randomData);
+    var songmovie = randomData[1];
+    console.log(songmovie);
+    //run spotify function with new data
+  
+    spotify.search();
+  
+  });
+  
+  
   }
-
-  // We will then print the contents of data
-  //console.log("node liri.js " + data);
-
-});
-
-
